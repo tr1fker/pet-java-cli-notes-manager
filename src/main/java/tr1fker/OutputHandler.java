@@ -18,4 +18,12 @@ public class OutputHandler {
         System.out.print("Введите номер опции:");
     }
 
+    public void printConsoleInputName(){
+        System.out.print("Введите название заметки:");
+    }
+
+    public void printConsoleSuccessAdding(){
+        System.out.println("Заметка успешно добавлена!");
+    }
+
 }
