@@ -34,6 +34,7 @@ public class UIHandler {
                     this.showListNotes();
                     break;
                 case 3:
+                    this.editNote();
                     break;
                 case 4:
                     break;
@@ -55,5 +56,14 @@ public class UIHandler {
     public void showListNotes(){
         List<Note> notes = this.notesHandler.getNotes();
         this.outputHandler.printConsoleListNotes(notes);
+    }
+
+    public void editNote(){
+        this.outputHandler.printConsoleInputId();
+        int id = this.inputHandler.inputInteger();
+        this.outputHandler.printConsoleInputNewName();
+        String name = this.inputHandler.inputString();
+        this.notesHandler.setNote(id, name);
+        this.outputHandler.printConsoleSuccessEditing();
     }
 }
