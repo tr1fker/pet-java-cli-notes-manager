@@ -1,6 +1,5 @@
 package tr1fker;
 
-import com.google.gson.Gson;
 import tr1fker.models.Note;
 
 import java.util.ArrayList;
@@ -26,6 +25,10 @@ public class NotesHandler {
         }
 
         this.notes.add(note);
+    }
+
+    public List<Note> getNotes(){
+        return this.notes;
     }
 
 

@@ -2,6 +2,8 @@ package tr1fker;
 
 import tr1fker.models.Note;
 
+import java.util.List;
+
 public class UIHandler {
     private InputHandler inputHandler;
     private OutputHandler outputHandler;
@@ -29,6 +31,7 @@ public class UIHandler {
                     this.createNote();
                     break;
                 case 2:
+                    this.showListNotes();
                     break;
                 case 3:
                     break;
@@ -47,5 +50,10 @@ public class UIHandler {
         String name = this.inputHandler.inputString();
         this.notesHandler.addNote(new Note(name));
         this.outputHandler.printConsoleSuccessAdding();
+    }
+
+    public void showListNotes(){
+        List<Note> notes = this.notesHandler.getNotes();
+        this.outputHandler.printConsoleListNotes(notes);
     }
 }
