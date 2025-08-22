@@ -36,4 +36,15 @@ public class OutputHandler {
         }
     }
 
+    public void printConsoleInputId(){
+        System.out.print("Введите номер заметки:");
+    }
+
+    public void printConsoleInputNewName(){
+        System.out.print("Введите новое название:");
+    }
+
+    public void printConsoleSuccessEditing(){
+        System.out.println("Заметка успешно отредактирована!");
+    }
 }
