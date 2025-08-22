@@ -35,6 +35,15 @@ public class NotesHandler {
         }
     }
 
+    public void removeNote(int id){
+        for (Note note : this.notes) {
+            if (note.getId() == id) {
+                this.notes.remove(note);
+                break;
+            }
+        }
+    }
+
     public List<Note> getNotes(){
         return this.notes;
     }
