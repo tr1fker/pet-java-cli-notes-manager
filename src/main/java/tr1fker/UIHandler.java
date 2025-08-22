@@ -1,14 +1,18 @@
 package tr1fker;
 
+import tr1fker.models.Note;
+
 public class UIHandler {
     private InputHandler inputHandler;
     private OutputHandler outputHandler;
+    private NotesHandler notesHandler;
 
     private boolean isRunning = false;
 
-    public UIHandler(OutputHandler outputHandler, InputHandler inputHandler) {
+    public UIHandler(OutputHandler outputHandler, InputHandler inputHandler, NotesHandler notesHandler) {
         this.outputHandler = outputHandler;
         this.inputHandler = inputHandler;
+        this.notesHandler = notesHandler;
     }
 
     public void startConsoleUI(){
@@ -22,6 +26,7 @@ public class UIHandler {
 
             switch(option){
                 case 1:
+                    this.createNote();
                     break;
                 case 2:
                     break;
@@ -35,5 +40,12 @@ public class UIHandler {
             }
         }
 
+    }
+
+    public void createNote(){
+        this.outputHandler.printConsoleInputName();
+        String name = this.inputHandler.inputString();
+        this.notesHandler.addNote(new Note(name));
+        this.outputHandler.printConsoleSuccessAdding();
     }
 }
