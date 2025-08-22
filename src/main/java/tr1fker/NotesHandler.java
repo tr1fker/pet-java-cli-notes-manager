@@ -27,6 +27,14 @@ public class NotesHandler {
         this.notes.add(note);
     }
 
+    public void setNote(int id, String name) {
+        for (Note note : this.notes) {
+            if (note.getId() == id) {
+                note.setName(name);
+            }
+        }
+    }
+
     public List<Note> getNotes(){
         return this.notes;
     }
