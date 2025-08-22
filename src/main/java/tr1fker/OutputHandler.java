@@ -47,4 +47,8 @@ public class OutputHandler {
     public void printConsoleSuccessEditing(){
         System.out.println("Заметка успешно отредактирована!");
     }
+
+    public void printConsoleSuccessDeleting(){
+        System.out.println("Заметка успешно удалена!");
+    }
 }
