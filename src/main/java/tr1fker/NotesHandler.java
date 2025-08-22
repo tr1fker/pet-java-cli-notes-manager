@@ -1,5 +1,6 @@
 package tr1fker;
 
+import com.google.gson.Gson;
 import tr1fker.models.Note;
 
 import java.util.ArrayList;
@@ -9,7 +10,11 @@ public class NotesHandler {
     private List<Note> notes;
     private int maxIdNote;
 
-    public NotesHandler() {
+    private GsonHandler gsonHandler;
+
+    public NotesHandler(GsonHandler gsonHandler) {
+        this.gsonHandler = gsonHandler;
+
         this.notes = new ArrayList<>();
         this.maxIdNote = 0;
     }
@@ -21,5 +26,17 @@ public class NotesHandler {
         }
 
         this.notes.add(note);
+    }
+
+
+    public void loadNotes(){
+        this.notes = this.gsonHandler.loadNotes();
+        for (Note note : this.notes){
+            note.setId(++this.maxIdNote);
+        }
+    }
+
+    public void saveNotes(){
+        this.gsonHandler.saveNotes(this.notes);
     }
 }
