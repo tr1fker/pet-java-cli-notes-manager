@@ -1,7 +1,7 @@
 package tr1fker;
 
 public class OutputHandler {
-    public void showConsoleMenu(){
+    public void printConsoleMenu(){
         System.out.print("""
              Меню            
 -----------------------------
@@ -13,4 +13,9 @@ public class OutputHandler {
 -----------------------------
                 """);
     }
+
+    public void printConsoleInputOption(){
+        System.out.print("Введите номер опции:");
+    }
+
 }
