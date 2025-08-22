@@ -1,9 +1,13 @@
 package tr1fker;
 
+import tr1fker.models.Note;
+
+import java.util.List;
+
 public class OutputHandler {
     public void printConsoleMenu(){
         System.out.print("""
-             Меню            
+             Меню
 -----------------------------
 1. Добавить заметку
 2. Просмотреть список заметок
@@ -24,6 +28,12 @@ public class OutputHandler {
 
     public void printConsoleSuccessAdding(){
         System.out.println("Заметка успешно добавлена!");
+    }
+
+    public void printConsoleListNotes(List<Note> notes){
+        for (Note note : notes){
+            System.out.println("Note №" + note.getId() + " Name:" + note.getName());
+        }
     }
 
 }
