@@ -37,6 +37,7 @@ public class UIHandler {
                     this.editNote();
                     break;
                 case 4:
+                    this.removeNote();
                     break;
                 case 5:
                     this.isRunning = false;
@@ -65,5 +66,12 @@ public class UIHandler {
         String name = this.inputHandler.inputString();
         this.notesHandler.setNote(id, name);
         this.outputHandler.printConsoleSuccessEditing();
+    }
+
+    public void removeNote(){
+        this.outputHandler.printConsoleInputId();
+        int id = this.inputHandler.inputInteger();
+        this.notesHandler.removeNote(id);
+        this.outputHandler.printConsoleSuccessDeleting();
     }
 }
